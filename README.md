@@ -1,35 +1,33 @@
 # 3D Indoor Mapping and Object Segmentation
 
+## Project Overview
+Indoor navigation for robots has become crucial, enabling autonomous robots to navigate complex environments. This project introduces a novel approach using RGB images for indoor mapping and object segmentation. The method involves creating a 3D mesh from Multi-View Stereo (MVS) RGB images, converting it into a point cloud for environmental segmentation. We conducted experiments to establish a baseline, presenting findings, and suggesting future improvements.
+
 ## Table of Contents
-1. [Project Contributors](#project-contributors)
-2. [Project Overview](#project-overview)
-3. [Introduction](#1-introduction)
+1. [Introduction](#1-introduction)
    - [Motivation](#11-motivation)
    - [Contributions](#12-contributions)
-4. [Related Work](#2-related-work)
+2. [Related Work](#2-related-work)
    - [Indoor Scene Mapping](#21-indoor-scene-mapping)
    - [Scene Schematic Segmentation](#22-scene-schematic-segmentation)
    - [Point Cloud Segmentation](#23-point-cloud-segmentation)
-5. [Method](#3-method)
+3. [Method](#3-method)
    - [Depth Maps (SimpleRecon)](#31-depth-maps-simplerecon)
    - [3-D Reconstruction](#32-3-d-reconstruction)
    - [Obtaining Point Cloud](#33-obtaining-point-cloud)
    - [Point Cloud Segmentation (Point-Voxel CNN)](#34-point-cloud-segmentation-point-voxel-cnn)
-6. [Experiments and Results](#4-experiments-and-results)
+4. [Experiments and Results](#4-experiments-and-results)
    - [SimpleRecon](#41-simplerecon)
    - [Point Segmentation Comparison](#42-point-segmentation-comparison)
    - [Results](#43-results)
-7. [Analysis of Prior Pipeline](#5-analysis-of-prior-pipeline)
-8. [Conclusion](#6-conclusion)
-9. [Credits](#8-credits)
+5. [Analysis of Prior Pipeline](#5-analysis-of-prior-pipeline)
+6. [Conclusion](#6-conclusion)
+7. [Credits](#8-credits)
 
 ## Project Contributors
 - Rishikesh Jadhav, University of Maryland, rjadhav1@umd.edu
 - Nishant Pandey, University of Maryland, npandey2@umd.edu
 - Jayasuriya Suresh, University of Maryland, jsuriya@umd.edu
-
-## Project Overview
-Indoor navigation for robots has become crucial, enabling autonomous robots to navigate complex environments. This project introduces a novel approach using RGB images for indoor mapping and object segmentation. The method involves creating a 3D mesh from Multi-View Stereo (MVS) RGB images, converting it into a point cloud for environmental segmentation. We conducted experiments to establish a baseline, presenting findings, and suggesting future improvements.
 
 # 1. Introduction
 Indoor mapping is essential for robot navigation in diverse environments. In this paper, we propose a method utilizing RGB images for 3D mapping and object segmentation, contributing to various applications such as robotics, emergency scenarios, and virtual reality. Our approach combines SimpleRecon and Point-Voxel CNN for efficient and accurate scene reconstructions.
