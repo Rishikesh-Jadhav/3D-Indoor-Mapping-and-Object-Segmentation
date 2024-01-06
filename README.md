@@ -56,7 +56,7 @@ Recent works in indoor mapping leverage various technologies, such as voxel-base
 
 # 3. Method
 
-<img src="outputs/pipeline_new.png" alt="Image Placeholder" width="50%" height="50%">
+<img src="outputs/pipeline_new.png" alt="Image Placeholder" width="75%" height="75%">
 
 Our approach combines SimpleRecon and Point-Voxel CNN for indoor mapping and object segmentation. The pipeline involves obtaining depth maps, 3D reconstruction, converting mesh data to point clouds, and point cloud segmentation.
 
