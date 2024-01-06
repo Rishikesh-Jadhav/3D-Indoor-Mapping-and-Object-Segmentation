@@ -1,5 +1,7 @@
 # 3D Indoor Mapping and Object Segmentation
 
+<img src="outputs/room_seg.png" alt="Image Placeholder" width="50%" height="50%">
+
 ## Project Overview
 Indoor navigation for robots has become crucial, enabling autonomous robots to navigate complex environments. This project introduces a novel approach using RGB images for indoor mapping and object segmentation. The method involves creating a 3D mesh from Multi-View Stereo (MVS) RGB images, converting it into a point cloud for environmental segmentation. We conducted experiments to establish a baseline, presenting findings, and suggesting future improvements.
 
@@ -53,6 +55,9 @@ Recent works in indoor mapping leverage various technologies, such as voxel-base
      - Several neural network-based point cloud segmentation models, including Point-Voxel CNN, have been proposed. We leverage Point-Voxel CNN for our segmentation tasks.
 
 # 3. Method
+
+<img src="outputs/pipeline.png" alt="Image Placeholder" width="50%" height="50%">
+
 Our approach combines SimpleRecon and Point-Voxel CNN for indoor mapping and object segmentation. The pipeline involves obtaining depth maps, 3D reconstruction, converting mesh data to point clouds, and point cloud segmentation.
 
    - **3.1 Depth Maps (SimpleRecon)**
@@ -72,15 +77,18 @@ We conducted experiments on the Microsoft research RGB-D Dataset 7-Scenes using 
 
    - **4.1 SimpleRecon**
      - We tested SimpleRecon with different configurations, considering keyframes and metadata. The recommended combination involves using metadata for depth predictions.
+     <img src="outputs/simple%20recon.png" alt="Image Placeholder" width="50%" height="50%">
 
    - **4.2 Point Segmentation Comparison**
      - Various Pointnet-based segmentation models were compared, with Point-Voxel CNN++ showing slightly better accuracy.
+     <img src="outputs/pvcnn.png" alt="Image Placeholder" width="50%" height="50%">
 
    - **4.3 Results**
      - The results indicate optimal performance up to the point of passing the generated dense point cloud to the Point-Voxel CNN for segmentation. The lack of ground truth data and hardware limitations impacted the evaluation.
+     <img src="outputs/outputs.png" alt="Image Placeholder" width="50%" height="50%">
 
 # 5. Analysis of Prior Pipeline
-An initial framework attempting to extract point clouds from a single RGB image was unsuccessful. The sparse point cloud generated from this approach was not suitable for segmentation.
+An initial framework attempting to extract point clouds from a single RGB image was unsuccessful. The sparse point cloud generated from this approach was not suitable for segmentation so we solved it by using Multi view Stereo to get a dense point cloud.
 
 # 6. Conclusion
 While the proposed method demonstrated viability, there is room for improvement. Future work should explore advanced mapping techniques, camera pose estimation from video sequences, and cross-data set training for segmentation models.
