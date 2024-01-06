@@ -56,7 +56,7 @@ Recent works in indoor mapping leverage various technologies, such as voxel-base
 
 # 3. Method
 
-<img src="outputs/pipeline_new.png" alt="Image Placeholder" width="75%" height="75%">
+<img src="outputs/pipeline_new.png" alt="Image Placeholder" width="95%" height="95%">
 
 Our approach combines SimpleRecon and Point-Voxel CNN for indoor mapping and object segmentation. The pipeline involves obtaining depth maps, 3D reconstruction, converting mesh data to point clouds, and point cloud segmentation.
 
@@ -77,15 +77,15 @@ We conducted experiments on the Microsoft research RGB-D Dataset 7-Scenes using 
 
    - **4.1 SimpleRecon**
      - We tested SimpleRecon with different configurations, considering keyframes and metadata. The recommended combination involves using metadata for depth predictions.
-     <img src="outputs/simple%20recon.png" alt="Image Placeholder" width="50%" height="50%">
+       <img src="outputs/simple%20recon.png" alt="Image Placeholder" width="50%" height="50%">
 
    - **4.2 Point Segmentation Comparison**
      - Various Pointnet-based segmentation models were compared, with Point-Voxel CNN++ showing slightly better accuracy.
-     <img src="outputs/pvcnn.png" alt="Image Placeholder" width="50%" height="50%">
+       <img src="outputs/pvcnn.png" alt="Image Placeholder" width="50%" height="50%">
 
    - **4.3 Results**
      - The results indicate optimal performance up to the point of passing the generated dense point cloud to the Point-Voxel CNN for segmentation. The lack of ground truth data and hardware limitations impacted the evaluation.
-      <img src="outputs/outputs_new.png" alt="Image Placeholder" width="50%" height="50%">
+       <img src="outputs/outputs_new.png" alt="Image Placeholder" width="50%" height="50%">
 
 # 5. Analysis of Prior Pipeline
 An initial framework attempting to extract point clouds from a single RGB image was unsuccessful. The sparse point cloud generated from this approach was not suitable for segmentation so we solved it by using Multi view Stereo to get a dense point cloud.
