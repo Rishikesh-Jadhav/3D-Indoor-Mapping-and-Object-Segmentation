@@ -77,14 +77,17 @@ We conducted experiments on the Microsoft research RGB-D Dataset 7-Scenes using 
 
    - **4.1 SimpleRecon**
      - We tested SimpleRecon with different configurations, considering keyframes and metadata. The recommended combination involves using metadata for depth predictions.
+       
       <img src="outputs/simple%20recon.png" alt="Image Placeholder" width="50%" height="50%">
 
    - **4.2 Point Segmentation Comparison**
      - Various Pointnet-based segmentation models were compared, with Point-Voxel CNN++ showing slightly better accuracy.
+
        <img src="outputs/pvcnn.png" alt="Image Placeholder" width="50%" height="50%">
 
    - **4.3 Results**
      - The results indicate optimal performance up to the point of passing the generated dense point cloud to the Point-Voxel CNN for segmentation. The lack of ground truth data and hardware limitations impacted the evaluation.
+
        <img src="outputs/outputs_new.png" alt="Image Placeholder" width="50%" height="50%">
 
 # 5. Analysis of Prior Pipeline
