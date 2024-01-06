@@ -1,4 +1,4 @@
-# 3D Indoor Mapping and Object Segmentation 
+# 3D Indoor Mapping and Object Segmentation
 
 ## Table of Contents
 1. [Project Contributors](#project-contributors)
@@ -34,52 +34,52 @@ Indoor navigation for robots has become crucial, enabling autonomous robots to n
 # 1. Introduction
 Indoor mapping is essential for robot navigation in diverse environments. In this paper, we propose a method utilizing RGB images for 3D mapping and object segmentation, contributing to various applications such as robotics, emergency scenarios, and virtual reality. Our approach combines SimpleRecon and Point-Voxel CNN for efficient and accurate scene reconstructions.
 
-## 1.1 Motivation
-Utilizing RGB images for mapping offers advantages in cost, field of view, and information gathering speed. Our method aims to provide quick point cloud segmentation using RGB images, essential for real-time applications.
+   - **1.1 Motivation**
+     - Utilizing RGB images for mapping offers advantages in cost, field of view, and information gathering speed. Our method aims to provide quick point cloud segmentation using RGB images, essential for real-time applications.
 
-## 1.2 Contributions
-- Proposing a novel method for indoor mapping using RGB images.
-- Conducting experiments to demonstrate the viability of the pipeline.
-- Analyzing and discussing results, providing avenues for future work.
+   - **1.2 Contributions**
+     - Proposing a novel method for indoor mapping using RGB images.
+     - Conducting experiments to demonstrate the viability of the pipeline.
+     - Analyzing and discussing results, providing avenues for future work.
 
 # 2. Related Work
 Recent works in indoor mapping leverage various technologies, such as voxel-based representations, point clouds, and RGBD input. Our research aims to achieve similar outcomes using RGB images exclusively, allowing for efficient processing and storage without significant loss of detail.
 
-## 2.1 Indoor Scene Mapping
-Various works use different techniques, such as voxel-based representations, point clouds, and RGBD cameras, for indoor scene mapping. Our approach builds upon these methods, focusing on RGB images for efficient processing.
+   - **2.1 Indoor Scene Mapping**
+     - Various works use different techniques, such as voxel-based representations, point clouds, and RGBD cameras, for indoor scene mapping. Our approach builds upon these methods, focusing on RGB images for efficient processing.
 
-## 2.2 Scene Schematic Segmentation
-Scene mapping and segmentation closely relate. Our proposed method integrates segmentation into the mapping pipeline using RGB images.
+   - **2.2 Scene Schematic Segmentation**
+     - Scene mapping and segmentation closely relate. Our proposed method integrates segmentation into the mapping pipeline using RGB images.
 
-## 2.3 Point Cloud Segmentation
-Several neural network-based point cloud segmentation models, including Point-Voxel CNN, have been proposed. We leverage Point-Voxel CNN for our segmentation tasks.
+   - **2.3 Point Cloud Segmentation**
+     - Several neural network-based point cloud segmentation models, including Point-Voxel CNN, have been proposed. We leverage Point-Voxel CNN for our segmentation tasks.
 
 # 3. Method
 Our approach combines SimpleRecon and Point-Voxel CNN for indoor mapping and object segmentation. The pipeline involves obtaining depth maps, 3D reconstruction, converting mesh data to point clouds, and point cloud segmentation.
 
-## 3.1 Depth Maps (SimpleRecon)
-SimpleRecon enhances 3D scene reconstruction using a 2D CNN with a cost volume for depth prediction. The integration of metadata ensures accurate depth predictions, making it suitable for real-time, low-memory environments.
+   - **3.1 Depth Maps (SimpleRecon)**
+     - SimpleRecon enhances 3D scene reconstruction using a 2D CNN with a cost volume for depth prediction. The integration of metadata ensures accurate depth predictions, making it suitable for real-time, low-memory environments.
 
-## 3.2 3-D Reconstruction
-We use Infinitam for depth merging and surface reconstruction. This step is crucial for translating depth information into a usable 3D format.
+   - **3.2 3-D Reconstruction**
+     - We use Infinitam for depth merging and surface reconstruction. This step is crucial for translating depth information into a usable 3D format.
 
-## 3.3 Obtaining Point Cloud
-Converting mesh data to a point cloud using Open3D involves extracting vertices and creating a point cloud. This step ensures efficient representation of the scene.
+   - **3.3 Obtaining Point Cloud**
+     - Converting mesh data to a point cloud using Open3D involves extracting vertices and creating a point cloud. This step ensures efficient representation of the scene.
 
-## 3.4 Point Cloud Segmentation (Point-Voxel CNN)
-Point-Voxel CNN aggregates high-level point cloud features and low-level voxel features. The voxel-based feature aggregation and point cloud feature extraction contribute to accurate segmentation.
+   - **3.4 Point Cloud Segmentation (Point-Voxel CNN)**
+     - Point-Voxel CNN aggregates high-level point cloud features and low-level voxel features. The voxel-based feature aggregation and point cloud feature extraction contribute to accurate segmentation.
 
 # 4. Experiments and Results
 We conducted experiments on the Microsoft research RGB-D Dataset 7-Scenes using pre-trained model weights for SimpleRecon. The proposed pipeline was tested for segmentation accuracy using Point-Voxel CNN on S3DIS.
 
-## 4.1 SimpleRecon
-We tested SimpleRecon with different configurations, considering keyframes and metadata. The recommended combination involves using metadata for depth predictions.
+   - **4.1 SimpleRecon**
+     - We tested SimpleRecon with different configurations, considering keyframes and metadata. The recommended combination involves using metadata for depth predictions.
 
-## 4.2 Point Segmentation Comparison
-Various Pointnet-based segmentation models were compared, with Point-Voxel CNN++ showing slightly better accuracy.
+   - **4.2 Point Segmentation Comparison**
+     - Various Pointnet-based segmentation models were compared, with Point-Voxel CNN++ showing slightly better accuracy.
 
-## 4.3 Results
-The results indicate optimal performance up to the point of passing the generated dense point cloud to the Point-Voxel CNN for segmentation. The lack of ground truth data and hardware limitations impacted the evaluation.
+   - **4.3 Results**
+     - The results indicate optimal performance up to the point of passing the generated dense point cloud to the Point-Voxel CNN for segmentation. The lack of ground truth data and hardware limitations impacted the evaluation.
 
 # 5. Analysis of Prior Pipeline
 An initial framework attempting to extract point clouds from a single RGB image was unsuccessful. The sparse point cloud generated from this approach was not suitable for segmentation.
